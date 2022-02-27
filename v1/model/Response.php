@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\v1;
+namespace App\v1\model;
 
 /**
  * Responsible for return an stardard consistency json response to the client
@@ -21,7 +21,7 @@ class Response
     private bool $isCacheEnabled = false;
     /** @var array $responseData Array that contains the headers of response requisiton */
     private array $responseData = array();
-    
+
     /**
      * Set the success flag
      *
@@ -54,7 +54,7 @@ class Response
     {
         array_push($this->messages, $message);
     }
-    
+
     /**
      * Set the data that will be returned for the user
      *
@@ -110,7 +110,6 @@ class Response
             $this->responseData['success'] = false;
             $this->addMessages("Response creation error");
             $this->responseData['messages'] = $this->messages;
-
         } else {
             http_response_code($this->httpStatusCode);
             $this->responseData['statusCode'] = $this->httpStatusCode;
@@ -120,5 +119,4 @@ class Response
 
         echo json_encode($this->responseData);
     }
-
 }
