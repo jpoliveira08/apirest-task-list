@@ -1,5 +1,7 @@
 <?php
 
+namespace App\v1\model;
+
 use App\v1\model\TaskException;
 
 class Task

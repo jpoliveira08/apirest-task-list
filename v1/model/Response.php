@@ -58,10 +58,10 @@ class Response
     /**
      * Set the data that will be returned for the user
      *
-     * @param string $data
+     * @param array $data
      * @return void
      */
-    public function setData(string $data): void
+    public function setData(array $data): void
     {
         $this->data = $data;
     }
